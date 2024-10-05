@@ -19,12 +19,12 @@ class Phrase {
             }
         });
     }
-
+    /* Returns a bool if char is in phrase */
     checkLetter(char) {
         return this.phrase.includes(char);
 
     }
-
+    
     showMatchedLetter(letter) {
         const letterClass = document.querySelectorAll(`.${letter}`);
         for (let i = 0; i < letterClass.length; i++) {
