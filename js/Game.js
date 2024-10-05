@@ -26,4 +26,41 @@ class Game {
 
     }
 
+    removeLife() {
+        const hearts = document.querySelectorAll('.tries img');
+        hearts[this.missed].src = "images/lostHeart.png"
+        this.missed += 1;
+        if (this.missed === 5) {
+            this.gameOver(false);
+        }
+    }
+
+    checkForWin() {
+        const hiddenLetters = document.querySelectorAll(`.hide`);
+        if (hiddenLetters.length === 0) {
+            this.gameOver(true);
+        } else {
+            return false;
+        }
+    }
+
+    gameOver(gameWon) {
+        const gameOverlay = document.getElementById('overlay');
+        const gameOverMsg = document.getElementById('game-over-message');
+        if (!gameWon) {
+            gameOverlay.style.display = "block";
+            gameOverMsg.textContent = "Oop, you lost. Try again?";
+            gameOverlay.classList.remove("start");
+            gameOverlay.classList.remove("win");
+            gameOverlay.classList.add("lose");
+            
+        } else {
+            gameOverlay.style.display = "block";
+            gameOverMsg.textContent = "Nice job buddy!";
+            gameOverlay.classList.remove("start");
+            gameOverlay.classList.remove("lose");
+            gameOverlay.classList.add("win");
+        }
+    }
+
 }

@@ -7,7 +7,8 @@ class Phrase {
     }
     addPhraseToDisplay() {
         const phraseBox = document.querySelector('#phrase ul');
-        Object.values(this.phrase).forEach((letter) => {
+        let phrasing = Object.values(this.phrase);
+        phrasing.forEach((letter) => {
             if (letter === " ") {
                 console.log("there is a space");
                 phraseBox.innerHTML += `<li class="space"> </li>`;
@@ -19,11 +20,19 @@ class Phrase {
         });
     }
 
-    checkLetter() {
+    checkLetter(char) {
+        return this.phrase.includes(char);
 
     }
 
-    showMatchedLetter() {
+    showMatchedLetter(letter) {
+        const letterClass = document.querySelectorAll(`.${letter}`);
+        for (let i = 0; i < letterClass.length; i++) {
+            let matchingLetterClass = letterClass[i];
+            // matchingLetterClass.classList.remove("hide");
+            // matchingLetterClass.classList.add("show");
+            matchingLetterClass.classList.replace("hide","show");
+        }
 
     }
 }
