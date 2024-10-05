@@ -22,7 +22,6 @@ class Game {
     }
 
     handleInteraction(button) {
-        console.log(button);
         button.disabled = true;
         /*If the phrase does not include the guessed letter, add the `wrong` CSS class to the
 selected letter's keyboard button and call the `removeLife()` method. */

@@ -27,5 +27,4 @@ document.addEventListener('keyup', (e) => {
         tappedKey === key.textContent ? game.handleInteraction(key) : null;
         });
     }
-    
 })

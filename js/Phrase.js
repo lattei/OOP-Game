@@ -10,11 +10,11 @@ class Phrase {
         let phrasing = Object.values(this.phrase);
         phrasing.forEach((letter) => {
             if (letter === " ") {
-                console.log("there is a space");
+                
                 phraseBox.innerHTML += `<li class="space"> </li>`;
 
             } else {
-                console.log("this a letter");
+                
                 phraseBox.innerHTML += `<li class="hide letter ${letter}">${letter}</li>`;
             }
         });
@@ -24,7 +24,7 @@ class Phrase {
         return this.phrase.includes(char);
 
     }
-    
+
     showMatchedLetter(letter) {
         const letterClass = document.querySelectorAll(`.${letter}`);
         for (let i = 0; i < letterClass.length; i++) {
